@@ -99,6 +99,7 @@ body{
     font-size: 3rem;
     color:var(--text-color);
     cursor: pointer;
+    display: none;
 }
 
 section{
@@ -140,6 +141,8 @@ section{
     font-weight: 600;
     color: transparent;
     -webkit-text-stroke: 1px rgb(255, 123, 0);
+   
+
 }
 
 .home-content p{
@@ -666,11 +669,13 @@ section{
   
   .project img {
     width: 100%;
+    height:75%;
     border-radius: 10px;
   }
   
   .project h3 {
     margin-top: 20px;
+    font-size: 2rem;
     color:var(--main-color);
   }
 
@@ -699,5 +704,130 @@ section{
     .footer{
         padding: 2rem 4%;
     }
+  }
+  @media (max-width: 768px){
+    .header{
+        background: var(--bg-color);
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--bg-color);
+        transition: 0.25s ease;
+        transition-delay: 0.25s;
+    }
+
+    .navbar.active{
+        transition-delay: 0.25s;
+        left: 0;
+    }
+
+    .navbar active-nav{
+        left: -100%;
+        top: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: var(--main-color);
+        border-top: 0.1rem solid rgba(0,0,0,0.2);
+        z-index: -1;
+        transition: 0.25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active .active-nav{
+        left: 0;
+        transition-delay: 0.25s;
+    }
+
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin:3rem 0 ;
+        transform: translateX(-20rem);
+        transition: 0.25s ease;
+        transition-delay: 0s;
+    }
+
+    .navbar.active a{
+        transform: translateX(0);
+        transition-delay: 0.25s;
+    }
+
+  }
+  @media (max-width: 520px){
+    html{
+        font-size: 50%;
+    }
+
+    .home-content h1 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .home-sci {
+        width: 160px;
+    }
+
+    .home-sci a{
+        width:38%;
+        height:38%;
+    }
+
+  }
+
+  @media (max-width: 462px){
+    .home-content h1{
+        font-size: 5.2rem;
+    }
+    .education{
+       padding: 10rem 4% 5rem 5%; 
+    }
+
+    .contact form .input-box .input-field{
+        width:100%; 
+
+    }
+
+    .footer{
+        flex-direction: column-reverse;
+    }
+
+    .footer p{
+        margin-top: 2rem;
+        text-align: center;
+    }
+
+
+  }
+
+  @media (max-width: 371px){
+    .home{
+        justify-content: center;
+    }
+    
+    .home-content{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+
+    }
+
   }
   
